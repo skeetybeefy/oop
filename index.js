@@ -61,9 +61,13 @@ class Salad extends Item {
         this._saladType = saladType
         this._weight = weight
 
-        this._price = this._saladType.price * this._weight / 100
-        this._calories = this._saladType.calories * this._weight / 100
+        
+
+        this._price = this._saladType.price * this._weight / Salad.defaultServing
+        this._calories = this._saladType.calories * this._weight / Salad.defaultServing
     }
+
+    static defaultServing = 100 // in grams
 
     static CAESAR = {
         price: 100,
